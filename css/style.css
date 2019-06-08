@@ -34,3 +34,28 @@ body {
 .logo {
   height: 35px;
 }
+
+.landing-container {
+  position: absolute;
+  top: 40%; /* in relation to parent element */
+  left: 50%; /* in relation to parent element */
+  transform: translate(-50%, -50%); /* in relation to itself */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 14.4px;
+}
