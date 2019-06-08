@@ -98,8 +98,25 @@ body {
   }
 }
 
+@keyframes moveInButtonFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 .btn {
   backface-visibility: hidden; /* fix for shaky animation */
+  position: relative;
+}
+
+.btn-animated-load {
+  animation: moveInButtonFromBottom 0.5s ease-out 0.3s; /* delay by .3sec */
+  animation-fill-mode: backwards; /* applies styles of 0% before the animation starts */
 }
 
 .btn:link,
@@ -121,7 +138,29 @@ body {
   transform: scale(1);
 }
 
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%; /* works, because after psudo element is treated as a child of the btn */
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(2);
+  opacity: 0;
+}
+
 .btn-white {
   background-color: white;
   color: #777;
+}
+
+.btn-white::after {
+  background-color: white;
 }
