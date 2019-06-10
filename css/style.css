@@ -1,18 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap");
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* root fontsize --> 1rem is 10px (if the default is 16px and is not overridden by the user) */
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -27,12 +33,12 @@ body {
 
 .logo-container {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 .landing-container {
@@ -47,15 +53,15 @@ body {
   color: #fff;
   text-transform: uppercase;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 
   backface-visibility: hidden; /* fix for shaky animation */
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
-  letter-spacing: 35px;
+  font-size: 6rem;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInHeadingFromLeft;
   animation-duration: 0.6s;
@@ -64,8 +70,8 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
-  letter-spacing: 14.4px;
+  font-size: 2rem;
+  letter-spacing: 1.4rem;
 
   animation: moveInHeadingFromRight 0.6s ease-out;
 }
@@ -73,10 +79,10 @@ body {
 @keyframes moveInHeadingFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -87,10 +93,10 @@ body {
 @keyframes moveInHeadingFromRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -101,7 +107,7 @@ body {
 @keyframes moveInButtonFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(10rem);
   }
   100% {
     opacity: 1;
@@ -123,15 +129,16 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
-  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
   display: inline-block;
   transition: all 0.2s;
+  font-size: 1.6rem;
 }
 
 .btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.192);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.192);
 }
 
 .btn:active {
@@ -143,7 +150,7 @@ body {
   display: inline-block;
   height: 100%; /* works, because after psudo element is treated as a child of the btn */
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
